@@ -8,11 +8,10 @@ const index = (req, res) => {
 }
   const nova = (req, res) => {
    const serie = new Serie ({
-     name:'Deixados para trás',
-     status: 'Assistido'
+     name:'A Grande Família',
+     status: 'Assistindo'
    })
-   serie.save(() => console.log('saved'))
-    res.render('series/nova')
+  res.render('series/nova')
   }
 module.exports = {
   index, nova

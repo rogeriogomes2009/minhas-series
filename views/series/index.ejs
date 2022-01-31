@@ -8,11 +8,10 @@
             <h2>Series</h2>
             <p class="lead">Uma headline aqui</p>
             <ul>
-              <%- series.forEach ( serie => { %>
-                <li><%= serie.name %></li>
-       
-              
-            </ul>
+              <% series.forEach (serie => { %>
+                <li><%= serie.name %> - <%= serie.status %></li>
+              <% }) %>
+              </ul>
           </div>
         </div>
       </div>
