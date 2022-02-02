@@ -11,11 +11,11 @@
               <% series.forEach (serie => { %>
                 <tr>
                   <td>
-                    <%= serie.name %>
+                   <a href="/series/info/<%=serie._id%>"><%= serie.name %></a>
                   </td>
                   <td>
                     <span class="badge badge-secondary">
-                    <%= labels.filter( label => label.id === serie.status)[0]%>
+                     <%= labels.filter( label => label.id === serie.status)[0].name %>
                     </lable>
                   </td>
                   <td>
