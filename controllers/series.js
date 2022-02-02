@@ -1,7 +1,7 @@
 const labels = [
-  { id: 'assistir', name: 'Para Assistir'},
-  { id: 'assistindo', name: 'Assistindo'},
-  { id: 'assistido', name: 'Assistido'}
+  { id: 'to-watch', name: 'Para Assistir'},
+  { id: 'watching', name: 'Assistindo'},
+  { id: 'watched', name: 'Assistido'},
 ]
 const index = async ({ Serie }, req, res) => {
   const docs = await Serie.find({})
@@ -21,7 +21,7 @@ const index = async ({ Serie }, req, res) => {
   }
  
 const novaForm = (req, res) => {
-  res.render('series/nova')
+  res.render('series/nova', { errors: []})
 }
 
 const excluir = async ({ Serie }, req, res) => {
@@ -44,8 +44,8 @@ const editarProcess = async ({ Serie }, req, res) => {
 
 
 const editarForm = async ({Serie}, req, res) => {
-const serie = await Serie.findOne({_id: req.params.id})
-    res.render('series/editar', {serie, labels})
+  const serie = await Serie.findOne({_id: req.params.id})
+    res.render('series/editar', {serie, labels, errors: []})
 }
 
 module.exports = {

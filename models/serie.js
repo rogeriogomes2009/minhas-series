@@ -7,7 +7,7 @@ const SerieSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    enumValues: ['assistir', 'assistindo', 'assistido']
+    enumValues: ['to-watch', 'watching', 'watched']
   },
   comments:[ String ]
 })

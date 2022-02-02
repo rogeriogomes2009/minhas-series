@@ -19,7 +19,7 @@
                 <label for="status">Situação:</label>
               <select class="form-control" id="status" name="status">
                 <% labels.forEach(label => { %>
-                  <option value="<%= label.id %>" <% if(label.id === serie.status) { %> selected="selected" <% } %>><%= label.name %></option>
+                <option value="<%= label.id %>" <% if(label.id === serie.status) { %> selected="selected" <% } %>><%= label.name %></option>
                 <% }) %>
                </select>
             </div>
