@@ -55,7 +55,7 @@ const info = async( { Serie}, req, res) => {
 
 const addComentario = async({Serie}, req, res) => {
   await Serie.updateOne({ _id: req.params.id }, {$push: {comments: req.body.comentario}})
-  res.redirect('series/info/'+req.params.id)
+  res.redirect('../info/'+req.params.id)
 }
 
 module.exports = {
