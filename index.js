@@ -26,8 +26,8 @@ app.set('view engine', 'ejs')
 app.use('/', pages)
 app.use('/series', series)
 
-app.listen(port, () => {
-  console.log('Listening on: '+port)
+app.listen(port, () => {console.log('Listening on: '+port)
+})
 /*
 mongoose
 .connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -37,5 +37,5 @@ mongoose
 })
 .catch( e => {
   console.log(e)*/
-})
+
 
