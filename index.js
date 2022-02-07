@@ -7,11 +7,11 @@ const pages = require('./routes/pages')
 const series = require('./routes/series')
 
 const port = process.env.PORT || 3000
-/*const mongo = process.env.MONGO || 'mongodb://localhost/minhas-series'
+const mongo = process.env.MONGO || 'mongodb://localhost/minhas-series'
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-*/
+
 // process request body
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -25,14 +25,14 @@ app.set('view engine', 'ejs')
 app.use('/', pages)
 app.use('/series', series)
 
-/*
+
 mongoose
 .connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
-  
-  })*/
-
-app.listen(port, () => {
+  app.listen(port, () => {
     console.log('Listening on: '+port)
+  })
+
+
 
 })
