@@ -34,7 +34,5 @@ mongoose
 
 app.listen(port, () => {
     console.log('Listening on: '+port)
-.catch( e => {
-  console.log(e)
-})
+
 })

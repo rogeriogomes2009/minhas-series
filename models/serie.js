@@ -1,4 +1,4 @@
-/*
+
 const mongoose = require('mongoose')
 
 const SerieSchema = mongoose.Schema({
@@ -13,4 +13,4 @@ const SerieSchema = mongoose.Schema({
   comments:[ String ]
 })
 const Serie = mongoose.model('Serie', SerieSchema)
-module.exports = Serie*/
+module.exports = Serie
