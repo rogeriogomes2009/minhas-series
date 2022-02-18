@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const app = express()
@@ -9,8 +10,8 @@ const series = require('./routes/series')
 const port = process.env.PORT || 3000
 const mongo = process.env.MONGO || 'mongodb://localhost/minhas-series'
 
-//const mongoose = require('mongoose')
-//mongoose.Promise = global.Promise
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
 // process request body
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,12 +27,13 @@ app.use('/', pages)
 app.use('/series', series)
 
 
-//mongoose
-//.connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
-//.then(() => {
+mongoose
+.connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => {
+  console.log(process.env.MONGO)
   app.listen(port, () => 
     console.log('Listening on: '+port))
-// })
-//.catch(e => {
- // console.log(e)
-//})
+})
+.catch(e => {
+  console.log(e)
+})
